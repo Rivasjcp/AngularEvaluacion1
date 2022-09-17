@@ -1,0 +1,38 @@
+<div class="container content">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <span class="anchor" id="formLogin"></span>
+            <!-- form	card	login	with	validation	feedback	-->
+            <div class="card	card-outline-secondary">
+                <div class="card-header">
+                    <h3 class="mb-0">Ingrese su tarjeta de credito</h3>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="form-group mb-3">
+                            <label	for="nombre">Nombre Completo:</label>
+                            <input	type="text"	class="form-control" id="nombre" placeholder="Ingresar nombre..." #nombre>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label	for="Numero Tarjeta">Numero de tarjeta:</label>
+                            <input	type="number" class="form-control" id="numeroTarjeta" placeholder="Ingresar Numero de tarjeta" #tarjeta>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label	for="Numero Vencimiento">Fecha de vencimiento:</label>
+                            <input	type="text" class="form-control" id="fechaVencimiento" placeholder="Ingresar Numero de tarjeta" #vencimiento>
+                        </div>
+                        
+                        <button	type="submit" class="btn btn-primary" (click)="guardar(nombre.value,tarjeta.value,vencimiento.value)">Guardar!</button>
+                        
+                        <button	type="reset" class="btn btn-primary ms-4">Borrar</button>
+                    </form>
+                 </div>
+            </div>
+        </div>
+    </div>
+    <hr	class="mb-5">
+    <div class="row">
+        <app-listas-generadas *ngFor="let d of datos" [tarjetas] = "d"></app-listas-generadas> 
+    </div>
+</div>
